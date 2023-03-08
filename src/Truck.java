@@ -8,6 +8,26 @@ public class Truck extends Vehicle {
         this.hasTrailer = hasTrailer;
     }
 
+    public boolean validateLicensePlate() {
+        if(hasTrailer && axles > 4) {
+            if(getLicensePlate().indexOf("MX") != -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if(hasTrailer && axles <= 4) {
+            if(getLicensePlate().indexOf("LX") != -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     public void printTruck() {
         System.out.println("License: " + getLicensePlate());
         System.out.println("Toll Fee: " + getTollFee());

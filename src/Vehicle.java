@@ -19,6 +19,13 @@ public class Vehicle {
     public int getPassengers() {
         return passengers;
     }
+    //setter methods
+    public void setPassengers(int newPassengers) {
+        passengers = newPassengers;
+    }
+    public void setTollFee(double newTollFee) {
+        tollFee = newTollFee;
+    }
 
     public double calculateTollPrice() {
         return tollFee * passengers;

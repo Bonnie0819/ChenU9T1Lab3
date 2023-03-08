@@ -14,6 +14,23 @@ public class Car extends Vehicle {
     public boolean isDiscountApplied() {
         return discountApplied;
     }
+    public boolean dropOffPassengers(int numOut) {
+        if(numOut < getPassengers()) {
+            setPassengers(getPassengers() - numOut);
+            return true;
+        }
+        return false;
+    }
+    public void applyDiscount() {
+        if(!discountApplied && electric) {
+            discountApplied = true;
+            setTollFee(getTollFee()/2);
+        }
+    }
+
+
+
+
     public void printCar() {
         System.out.println("License: " + getLicensePlate());
         System.out.println("Toll Fee: " + getTollFee());
