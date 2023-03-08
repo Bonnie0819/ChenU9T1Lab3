@@ -21,6 +21,9 @@ public class Car extends Vehicle {
         }
         return false;
     }
+    public void setDiscount() {
+        discountApplied = true;
+    }
     public void applyDiscount() {
         if(!discountApplied && electric) {
             discountApplied = true;
