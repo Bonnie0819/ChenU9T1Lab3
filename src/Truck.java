@@ -27,11 +27,17 @@ public class Truck extends Vehicle {
         return true;
     }
 
+    @Override
+    public double calculateTollPrice() {
+        if(hasTrailer) {
+            return getTollFee() * axles * 2;
+        }
+        return getTollFee() * axles;
+    }
 
-    public void printTruck() {
-        System.out.println("License: " + getLicensePlate());
-        System.out.println("Toll Fee: " + getTollFee());
-        System.out.println("Passengers: " + getPassengers());
+    @Override
+    public void printInfo() {
+        super.printInfo();
         System.out.println("Number of AXels: " + axles);
         System.out.println("Has Trailer? " + hasTrailer);
     }

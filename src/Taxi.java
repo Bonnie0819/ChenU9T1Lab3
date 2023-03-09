@@ -21,13 +21,17 @@ public class Taxi extends Car {
         }
     }
 
+    public boolean chargeAndDropOffRiders(double farePerRider) {
+        int passengers = getPassengers() -1;
+        fareCollected += passengers * farePerRider;
+        return dropOffPassengers(passengers);
 
-    public void printTaxi() {
-        System.out.println("License: " + getLicensePlate());
-        System.out.println("Toll Fee: " + getTollFee());
-        System.out.println("Passengers: " + getPassengers());
-        System.out.println("Electric? " + isElectric());
-        System.out.println("Discount Applied? " + isDiscountApplied());
+    }
+
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
         System.out.println("Total Fare Collected: " + fareCollected);
     }
 
